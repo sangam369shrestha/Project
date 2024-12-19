@@ -4,7 +4,7 @@
 // ini_set('display_errors', 1);
     session_start();
     if (isset($_SESSION['username'])){
-        header('location:Admin/admin_main.php');
+        header('location:Admin Works/admin_main.php');
     }
     if (isset($_GET['msg']) && $_GET['msg'] == 1) {
         $err['failed'] = 'Please login to continue...';
@@ -20,7 +20,7 @@
         if(count($err)==0){
             try{
             
-                $conn = new mysqli('localhost', 'root', '', 'test');
+                $conn = new mysqli('localhost', 'root', '', 'project_task_management_system');
                 $query = "select * from admin where username = '$username' and password = '$password' ";
                 $result = mysqli_query($conn, $query);
                 print_r($result);
@@ -35,7 +35,7 @@
                     //     setcookie('username',$user['username'],time()+(7*24*60*60));
                     //     setcookie('password',$user['password'],time()+(7*24*60*60));
                     // }
-                    header('location:Admin/admin_main.php');
+                    header('location:Admin Works/admin_main.php');
                     
                 } else {
                     
@@ -79,7 +79,6 @@
             align-items: center;
             border: none;
             background-color:skyblue;
-            /* background-color:  rgb(37, 135, 221); */
             border-radius: 10px;
             box-shadow: 4px 4px 4px darkblue;
         }
@@ -107,7 +106,6 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 17px;
         }
-        
         input[type=password]{
             width: 80%;
             margin-block: 30px;
@@ -122,9 +120,7 @@
         input[type=password]:focus, input[type=text]:focus{
             outline: none;
             border-bottom: 1px solid;
-          
         }
-       
         #login{
             width: 80%;
             height: 40px;
@@ -133,7 +129,6 @@
             font-size: 15px;
             border: none;
             border-radius: 10px;
-            
             background-color: dodgerblue;
         }
         #login:hover{

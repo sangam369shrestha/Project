@@ -1,27 +1,27 @@
 <?php include_once 'admin_head.php' ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="cont">
     <div class="tab_buttons">
             <ul class="tab_lists">
-                <li id="tab1" class="active"><p>Managers</p></li>
-                <li id="tab2"><p>Departments</p></li>
+                <li id="tab2" class="active"><p>Departments</p></li>
+                <li id="tab1"><p>Managers</p></li>
                 <li id="tab3"><p>Projects</p></li>
             </ul>
         </div>
         
         <div class="tabs_content">
-            <div class="active">
-                <h2>Managers</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto optio itaque similique nulla veritatis voluptates tempora numquam, 
-                    iure sint sit amet odit repellat, iste placeat dolores repellendus quae laboriosam. Odit et qui asperiores similique blanditiis debitis
-                     maiores nobis necessitatibus est?</p>
-            </div>
-            <div>
+            <div class="active" id="first">
                 <h2>Departments</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolorum dolor voluptates 
                     facere quod esse, illum odio, nihil molestias fugiat debitis assumenda excepturi nulla veritatis corrupti, aut soluta doloremque officiis
                      beatae ipsam. Voluptatem in repellat ratione est, ut accusamus quibusdam?</p>
             </div>
-            <div>
+            <div id="second">
+                <h2>Managers</h2>
+                
+            </div>
+            
+            <div id="third">
                 <h2>Projects</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci, 
                     excepturi commodi eum, nam reprehenderit ipsam nemo 
@@ -47,6 +47,24 @@
                 });
                 tabs[index].classList.add('active');
                 tab_contents[index].classList.add('active');
+                
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function (){
+            $('#tab1').click(function(){
+                $.ajax({
+                    url :'man_insert.php',
+                    method: 'get',
+                    success: function (response){
+                        $('#second').html(response);
+                    }
+                    error: function () {
+                        // Handle errors
+                        $("#second").html("<p>Failed to load content.</p>");
+                    }
+                })
             })
         })
     </script>

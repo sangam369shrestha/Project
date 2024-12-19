@@ -8,19 +8,19 @@
 body{
     min-height: 100vh;
     width: 100%;
-    background-color:  #318CE7;
+    background-color:  #b9c4cf;
 }
 
  nav{
     width: 100%;
-    background-color: #13274F;
-    
+    background-color: #27280f;
+    border-bottom: 5px solid;
 }
 nav ul{
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    height: 60px;
+    height: 100px;
     align-items: center;
     margin-right: 1%;
 }
@@ -36,8 +36,19 @@ nav ul .logo{
     border: 2px solid;
     color: rgb(137, 178, 213);
 }
-nav .onDesk li:nth-child(2) a, nav ul li:nth-child(3) a, nav ul li:nth-child(4) a{
+nav .onDesk li:nth-child(2){
+    margin-right: 20%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+nav .onDesk li:nth-child(2) p{
+    font-size: 30px;
+}
+
+nav .onDesk  li:nth-child(3) a, nav .onDesk li:nth-child(4) a{
     padding: 10px;
+    /* margin-right: 1%; */
     text-decoration: none;
     font-size: 18px;
     border-radius: 3px;
@@ -46,26 +57,12 @@ nav .onDesk li:nth-child(2) a, nav ul li:nth-child(3) a, nav ul li:nth-child(4) 
 nav .onDesk .onlyOnDesktop:nth-child(2) a:hover, nav .onDesk li:nth-child(3) a:hover, nav .onDesk li:nth-child(4) a:hover{
     color: rgb(119, 165, 229);
 }
-nav ul li:nth-child(5){
-    margin-inline: 2%;
-}
-nav ul li:nth-child(5) input[type=search]{
-    height: 35px;
-    width: 250px;
-    border-radius: 8px;
-    border: none;
-    background-color: rgb(170, 211, 211);
-    color: darkblue;
-}
-input[type=search]:focus{
-    outline: none;
-    border: none;
-}
+
 nav ul li:nth-child(5) button{
     border: none;
 }
 .accountOption{
-    margin-right: 4%;
+    margin-inline: 4%;
 }
 .accountOption i{
     padding: 8px;
@@ -195,8 +192,7 @@ a{
 }
 /* ---ends here */
 .cont{
-    margin-top: 2%;
-    
+    border-top: 5px solid;
     width: 100%;
     border:none;
     height: 85vh;
@@ -219,12 +215,13 @@ a{
     
 }
 .tab_lists li p{
-    font-size: 20px;
+    font-size: 16px;
     color: rgb(111, 180, 241);
+    font-family: 'Courier New', Courier, monospace;
 }
 .tabs_content{
     padding: 1em;
-    background-color: #002244;
+    background-color: #6b6f72;
 }
 .tabs_content div{
     display: none;
@@ -233,11 +230,11 @@ a{
     content: justify;
 }
 div h2{
-    color: rgb(61, 138, 210);
+    color: rgb(29, 30, 32);
 }
 .tabs_content div p{
     padding: 3%;
-    color: rgb(126, 181, 221);
+    color: rgb(38, 41, 43);
 }
 .tabs_content .active{
     display: block;
@@ -252,7 +249,7 @@ div h2{
 }
 
 
-/*  For Register manager */
+ /* For Register manager
 .mn{
     margin-top: 5%;
     width: 100%;
@@ -322,7 +319,7 @@ input:focus{
 .skills label{
     width: 45%;
 }
-input[type=radio]{
+input[type=checkbox]{
     width: 22%;
 }
 .exp{
@@ -348,7 +345,7 @@ input[type=date], select{
     display: flex;
     
 }
-input[type=submit], input[type=reset]{
+button[type=submit], input[type=reset]{
     height: 35px;
     width: 150px;
     margin-inline: 10%;
@@ -359,16 +356,15 @@ input[type=submit], input[type=reset]{
 }
 input[type=submit]:hover, input[type=reset]:hover{
     background-color: royalblue;
-    cursor: pointer;
-    font-size: 14px;
+    cursor: pointer; */
+    /* font-size: 14px;
     padding: 3px;
     transition: 0.4s;
-}
+} */
 
 /*  For Footer */
 
 .mn-footer{
-    margin-top: 5%;
     width: 100%;
     background-color: rgb(15, 34, 49);
     border-top-left-radius: 10px ;
@@ -419,7 +415,8 @@ footer .links{
 }
 li a i:hover{
     color: rgb(76, 134, 184);
-    transition: 0.5s;
+    transform: rotate(360deg);
+    transition: 0.3s;
     box-shadow: 5px rgb(183, 183, 210);
 }
 li p{
@@ -436,4 +433,59 @@ li p{
 .cp-rt{
     font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: beige;
+}
+
+/* styling for manager insert */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+}
+.conten{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: grid;
+    place-items: center;
+}
+.conten form{
+    width: 70%;
+    display: grid;
+    place-items: center;
+}
+ fieldset{
+    margin-block: 2%;
+    width: 100%;  
+    display: grid;
+    place-items: center;
+
+}
+.conten form fieldset .inf{
+    margin-block: 3%;
+    width: 90%;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-around;
+
+}
+.inf .detl, .off-detl{
+    width: 40%;
+    border: 1px solid;
+    margin-block: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.detl input{
+    width: 90%;
+    height: 40px;
+}
+.off-detl input{
+    width: 90%;
+    height: 40px;
 }
