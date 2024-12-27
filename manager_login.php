@@ -2,7 +2,7 @@
 
     session_start();
     if (isset($_SESSION['username'])){
-        header('location:Admin/admin-dash.php');
+        header('location:Manager Works/manager_main.php');
     }
     if (isset($_GET['msg']) && $_GET['msg'] == 1) {
         $err['failed'] = 'Please login to continue...';
@@ -11,35 +11,38 @@
         $err = [];
         if(isset($_POST['username']) && isset($_POST['password'])){
             $username = $_POST['username'];
-            $password = md5($_POST['password']);
+            $password = $_POST['password'];
         } else {
             $err['failed'] = 'Please fill out the field';
         }
         if(count($err)==0){
             try{
-            
                 $conn = new mysqli('localhost', 'root', '', 'project_task_management_system');
-                $query = "select * from admin where username = '$username' and password = '$password' ";
-                $result = mysqli_query($conn, $query);
-                // print_r($result);
-              
-                
+                $query = "select * from manager where username = '$username' and password = '$password' ";
+                // $result = mysqli_query($conn, $query);
+                $stmt = $conn->prepare("SELECT * FROM manager WHERE username = ?");
+                $stmt->bind_param('s', $username);
+                $stmt->execute();
+                $result = $stmt->get_result();
                 if(mysqli_num_rows($result) == 1){
                     $user = mysqli_fetch_assoc($result);
-                    session_start();
-                    $_SESSION['username'] = $user['username'];
-                    // $_SESSION['user'] == $user;
-                    // if (isset($_POST['remember'])) {
-                    //     setcookie('username',$user['username'],time()+(7*24*60*60));
-                    //     setcookie('password',$user['password'],time()+(7*24*60*60));
-                    // }
-                    header('location:Admin/admin-dash.php');
-                    
+                    if (password_verify($password, $user['password'])) {
+                        session_start();
+                        $_SESSION['username'] = $user['username'];
+                        // $_SESSION['user'] == $user;
+                        // if (isset($_POST['remember'])) {
+                        //     setcookie('username',$user['username'],time()+(7*24*60*60));
+                        //     setcookie('password',$user['password'],time()+(7*24*60*60));
+                        // }
+                        header('location:Manager Works/manager_main.php');
+                    }
                 } else {
                     
                     $err['failed'] = "Invalid username or password";
                     
                 }
+                $stmt->close();
+                $conn->close();
             } catch(Exception $ex){
                 die ('Error message: '.$ex->getMessage());
             }
@@ -51,7 +54,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin</title>
+    <title>Login Manager</title>
     <style>
         *{
             margin: 0;
@@ -147,7 +150,7 @@
     
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
             <fieldset>
-                <p>Login Admin</p>
+                <p>Login Manager</p>
                 <input type="text" name="username" id="username" placeholder="Enter your username">
                 <input type="password" name="password" id="password" placeholder="Enter your password">
                 <!-- <div class="rm">

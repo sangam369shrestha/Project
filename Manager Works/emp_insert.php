@@ -1,8 +1,9 @@
-    <?php include_once 'admin_head.php'; ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="conten">
+    <p class="back"><i class="fa-solid fa-angle-left"> Back</i></p>
     <form id="dataForm">
         <fieldset>
             <div class="inf">
@@ -50,7 +51,7 @@
                 e.preventDefault();
 
                 $.ajax({
-                    url: "add_man.php",
+                    url: "add_emp.php",
                     type: "POST",
                     data: $(this).serialize(),
                     success: function (response) {
@@ -61,6 +62,7 @@
                     }
                 });
             });
+
         });
     </script>
 </body>

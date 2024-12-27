@@ -1,0 +1,322 @@
+/* for navbar */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color:  #b9c4cf;
+}
+
+nav{
+    width: 100%;
+    background-color: #27280f;
+    border-bottom: 5px solid;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    align-items: center;
+    margin-right: 1%;
+}
+nav ul .logo{
+    margin-right: auto;
+    margin-left: 3%;
+    width: 6%;
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid;
+}
+.logo p{
+    font-size: 22px;
+    border: 2px solid;
+    color: rgb(137, 178, 213);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+nav .onDesk .onlyOnDesktop{
+    margin-right: auto;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+nav .onDesk li:nth-child(2) p{
+    font-size: 30px;
+}
+
+
+.accountOption{
+    margin-inline: 1%;
+    border-radius: 10%;
+}
+.accountOption i{
+    padding: 8px;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: rgb(158, 234, 234);
+    /* border-radius: 50px; */
+    background-color: rgb(168, 224, 205);
+    border-radius: 10%;
+
+}
+nav ul .accountOption i:hover{
+    background-color: rgb(154, 192, 192);
+    cursor: pointer;
+}
+
+nav ul li:last-child i{
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+nav ul li:last-child:hover{
+    background-color: rgb(71, 128, 178);
+    cursor: pointer;
+}
+.onDesk button{
+    margin-inline: 2%;
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    background-color: #9ea6ac;
+}
+.onDesk button a{
+    text-decoration: none;
+    font-family:  monospace;
+    font-weight: bolder;
+}
+/* ---ends here */
+/* starts for main */
+.cont{
+    border-top: 5px solid;
+    border-bottom: 10px solid;
+    width: 100%;
+    border:none;
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+    background-color: rgb(39, 82, 142); 
+}
+.tab_buttons{
+    height: 100%;
+}
+.tab_buttons .tab_lists{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 10px solid;
+}
+.tab_lists li{
+    height: 75px;
+    width: 100%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    
+}
+.tab_lists li button{
+    width: 95%;
+    height: 90%;
+    font-size: 20px;
+    color: rgb(228, 231, 235);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: #6b6f72;
+}
+.tabContent{
+    padding: 1em;
+    background-color: #6b6f72;
+}
+.tabContent div{
+    display: none;
+}
+.tabContent div p{
+    content: justify;
+}
+div h2{
+    color: rgb(29, 30, 32);
+}
+.tabContent div p{
+    padding: 3%;
+    color: rgb(38, 41, 43);
+}
+.tabContent .active{
+    display: block;
+    
+}
+.tab_lists .active{
+    background-color: #002244;
+}
+
+.rl{
+    color: rgb(133, 209, 222);
+}
+/* ends here */
+/*  For Footer */
+
+.mn-footer{
+    width: 100%;
+    background-color: rgb(15, 34, 49);
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px;
+}
+footer{
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+    height: 150px;
+}
+footer .links{
+    margin-block: 10px;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+.links .website-links{
+    
+    width: 50%;
+    height: 90%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.website-links li a{
+    text-decoration: none;
+}
+.links .media-links{
+    width: 40%;
+    height: 90%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.media-links li{
+    margin-inline: 10px;
+}
+.media-links li a i{
+    font-size: 20px;
+    color: rgb(194, 141, 141);
+    padding: 2px;
+}
+li a i:hover{
+    color: rgb(76, 134, 184);
+    transform: rotate(360deg);
+    transition: 0.3s;
+    box-shadow: 5px rgb(183, 183, 210);
+}
+li p{
+    font-size: 18px;
+    font-family: 'Lucida Handwriting';
+    font-weight: bold;
+    color: azure;
+}
+.copyrights{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.cp-rt{
+    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: beige;
+}
+/* ends here */
+/* styling for manager insert */
+.conten{
+    position: relative;
+    width: 100%;
+    background-color: #b8b5b5;
+    display: flex;
+    justify-content: space-around;
+}
+.conten .back{
+    margin-block: 2%;
+    height: 20px;
+    width: 3%;
+    display: grid;
+    place-items: center;
+}
+.back i{
+   padding: 3%;
+}
+i:hover{
+    background-color: #27280f;
+}
+.conten form{
+    width: 80%;
+    display: grid;
+    place-items: center;
+}
+ fieldset{
+    margin-block: 1%;
+    width: 100%;  
+    display: grid;
+    place-items: center;
+}
+.conten form fieldset .inf{
+    margin-block: 3%;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+.inf .detl, .off-detl{
+    width: 40%;
+    border: 1px solid;
+    margin-block: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.detl input{
+    width: 90%;
+    height: 40px;
+}
+.off-detl input{
+    width: 90%;
+    height: 40px;
+}
+/* Manager details */
+.conts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.conts button{
+    margin-right: 3%;
+    margin-block: 2%;
+    width: 10%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #6b6f72;
+}
+.conts .man_dets{
+    margin-right: auto;
+    margin-left: 1%;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    align-items: center;
+    width: 99%;
+}
+.man_dets li{
+    width: 96%;
+    margin-block: 0.5%;
+    background-color: #6b6f72;
+    height: 60px;
+}

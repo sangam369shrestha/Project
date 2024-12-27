@@ -32,7 +32,7 @@
         nav{
             width: 100%;
             position: fixed;
-            background-color: #13274F;
+            background-color:rgb(86, 88, 93);
             box-shadow: 2px, 3px, 3px, 2px, black;
             border-bottom: 1px solid;
         }
@@ -44,7 +44,7 @@
             align-items: center;
         }
         nav ul .hideOnMobile{
-            height: 50px; 
+            height: 80px; 
         }
         /* nav .navigation .def{
             margin-right: 20%;
@@ -225,8 +225,8 @@
             <ul class="cate">
                 <li class="ident">As</li>
                 <li class="log"><a href="admin_login.php">Admin</a></li>
-                <li class="log"><a href="#">Manager</a></li>
-                <li class="log"><a href="#">Employee</a></li>
+                <li class="log"><a href="manager_login.php">Manager</a></li>
+                <li class="log"><a href="employee_login.php">Employee</a></li>
             </ul>
         </div>
     </div>
